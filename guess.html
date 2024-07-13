@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the Number Game</title>
+    <title>Fun Games</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Guess the Number Game</h1>
-        <p>I have selected a number between 1 and 100. Try to guess it!</p>
-        <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
-        <button onclick="guessNumber()">Guess</button>
-        <p id="feedback"></p>
-        <p id="attempts"></p>
+        <h1>Fun Games</h1>
+        <div class="button-container">
+            <button onclick="showGame('guess')">Guess the Number Game</button>
+            <button onclick="showGame('word')">Word Guessing Game</button>
+        </div>
+
+        <div id="guessGame" class="game">
+            <h2>Guess the Number Game</h2>
+            <p>I have selected a number between 1 and 100. Try to guess it!</p>
+            <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
+            <button onclick="guessNumber()">Guess</button>
+            <p id="feedback"></p>
+            <p id="attempts"></p>
+        </div>
+
+        <div id="wordGame" class="game" style="display:none;">
+            <h2>Word Guessing Game</h2>
+            <p>Guess the hidden word!</p>
+            <p id="wordToGuess"></p>
+            <div class="letter-input">
+                <input type="text" id="letterInput" placeholder="Enter a letter">
+                <button onclick="guessLetter()">Guess</button>
+            </div>
+            <p id="wordFeedback"></p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
